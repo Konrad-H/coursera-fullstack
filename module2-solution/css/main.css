@@ -162,12 +162,15 @@
     height: 20%;
     border: .5vw solid lightgray;
     border-top: 0;
-    background-color: lightseagreen;
+    
     position: absolute;
     right: 0;
 
   }
 
+  .beef >h2{background-color: lightseagreen;}
+  .chicken >h2{background-color: lightsalmon;}
+  .sushi >h2{background-color: lightslategray;}
   .plate>h2>p{
     
     /* margin-top: 20%; */
