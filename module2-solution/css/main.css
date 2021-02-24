@@ -142,8 +142,9 @@
     margin: 0;
   }
   h1 {
-    text-align: center;;
-    margin-bottom: 2vw;
+    top: 10px;
+    text-align: center;
+    margin: 2vw;
     font-size: 175%;
   }
 
