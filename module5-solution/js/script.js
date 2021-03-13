@@ -92,7 +92,7 @@ $ajaxUtils.sendGetRequest(
 // Builds HTML for the home page based on categories array
 // returned from the server.
 
-console.log(11);
+// console.log(11);
 
 
 function buildAndShowHomeHTML (categories) {
@@ -108,7 +108,7 @@ function buildAndShowHomeHTML (categories) {
       // variable's name implies it expects.
       var chosenCategoryShortName = chooseRandomCategory(categories);
 
-      console.log(15);
+      // console.log(15);
       // TODO: STEP 3: Substitute {{randomCategoryShortName}} in the home html snippet with the
       // chosen category from STEP 2. Use existing insertProperty function for that purpose.
       // Look through this code for an example of how to do use the insertProperty function.
@@ -120,11 +120,11 @@ function buildAndShowHomeHTML (categories) {
       // Hint: you need to surround the chosen category short name with something before inserting
       // it into the home html snippet.
       //
-      console.log(String(chosenCategoryShortName))
+
+      // console.log((chosenCategoryShortName))
       var homeHtmlToInsertIntoMainPage = insertProperty (homeHtml, "randomCategoryShortName",
-        String(chosenCategoryShortName) );
-
-
+        ("'"+chosenCategoryShortName.short_name+"'") );
+      
       // TODO: STEP 4: Insert the the produced HTML in STEP 3 into the main page
       // Use the existing insertHtml function for that purpose. Look through this code for an example
       // of how to do that.
@@ -157,10 +157,13 @@ dc.loadMenuCategories = function () {
 // Load the menu items view
 // 'categoryShort' is a short_name for a category
 dc.loadMenuItems = function (categoryShort) {
+  // console.log("Started Loading cat:" + categoryShort)
+  // console.log(categoryShort)
   showLoading("#main-content");
   $ajaxUtils.sendGetRequest(
     menuItemsUrl + categoryShort,
     buildAndShowMenuItemsHTML);
+    // console.log("End Cat Loading")
 };
 
 
