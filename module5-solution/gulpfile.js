@@ -56,9 +56,9 @@ var sass        = require('gulp-sass');
 
 // Compile sass into CSS & auto-inject into browsers
 gulp.task('sass', function() {
-    return gulp.src("app/scss/*.scss")
+    return gulp.src("scss/*.scss")
         .pipe(sass())
-        .pipe(gulp.dest("app/css"))
+        .pipe(gulp.dest("css"))
         .pipe(browserSync.stream());
 });
 
@@ -66,11 +66,11 @@ gulp.task('sass', function() {
 gulp.task('serve', gulp.series('sass', function() {
 
     browserSync.init({
-        server: "./app/"
+        server: "."
     });
 
-    gulp.watch("app/scss/*.scss", gulp.series('sass'));
-    gulp.watch("app/*.html").on('change', browserSync.reload);
+    gulp.watch("scss/*.scss", gulp.series('sass'));
+    gulp.watch("*.html").on('change', browserSync.reload);
     // gulp.watch("app/js/*.js").on('change', browserSync.reload);
 }));
 
